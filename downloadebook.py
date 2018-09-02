@@ -49,7 +49,7 @@ def get_link_by_type(i, type):
         link = get_link(i, type, lt)
     return link
 
-with io.open('./json/' + sys.argv[1], 'r', encoding='utf-8') as f:
+with io.open(sys.argv[1], 'r', encoding='utf-8') as f:
     books = json.load(f)
 
 for book in books:
@@ -63,5 +63,5 @@ for book in books:
     #book = {"id": i, "epub_link": epub_link, "mobi_link": mobi_link, "pdf_link": pdf_link}
     #books.append(book)
 
-with io.open('./json/' + sys.argv[1], 'w', encoding='utf-8') as outfile:
+with io.open(sys.argv[1], 'w', encoding='utf-8') as outfile:
     outfile.write(unicode(json.dumps(books, ensure_ascii=False)))

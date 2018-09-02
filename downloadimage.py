@@ -10,7 +10,7 @@ headers = {
     'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'}
 
 
-with io.open('./json/' + sys.argv[1], 'r', encoding='utf-8')  as f:
+with io.open(sys.argv[1], 'r', encoding='utf-8')  as f:
     books = json.load(f)
 
 for book in books:
@@ -26,5 +26,5 @@ for book in books:
         print('Error while download image for ' + book[id])
         continue
 
-with io.open('./json/' + sys.argv[1], 'w', encoding='utf-8') as outfile:
+with io.open(sys.argv[1], 'w', encoding='utf-8') as outfile:
     outfile.write(unicode(json.dumps(books, ensure_ascii=False)))

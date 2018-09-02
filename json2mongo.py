@@ -6,10 +6,10 @@ from pymongo import MongoClient
 import io
 
 
-with io.open('./json/' + sys.argv[1], 'r', encoding='utf-8') as f:
+with io.open(sys.argv[1], 'r', encoding='utf-8') as f:
     books = json.load(f)
 
-client = MongoClient('mongodb://root:admin123@haoict.com:27017/rrchat?authSource=admin')
+client = MongoClient('mongodb://root:admin123@haoict.com:27017/mdstbooks?authSource=admin')
 
 db = client.mdstbooks
 books_collection = db.books
