@@ -20,7 +20,7 @@ class TimsachSpider(scrapy.Spider):
         #     'http://timsach.top/ebook/8.html',
         #     'http://timsach.top/ebook/10.html',
         # ]
-        for i in range(1, 50):
+        for i in range(12108, 29998):
             yield scrapy.Request(url=base_url + str(i) + '.html', callback=self.parse)
 
     def parse(self, response):

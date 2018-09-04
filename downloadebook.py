@@ -63,5 +63,5 @@ for book in books:
     #book = {"id": i, "epub_link": epub_link, "mobi_link": mobi_link, "pdf_link": pdf_link}
     #books.append(book)
 
-with io.open(sys.argv[1], 'w', encoding='utf-8') as outfile:
+with io.open(sys.argv[2], 'w', encoding='utf-8') as outfile:
     outfile.write(unicode(json.dumps(books, ensure_ascii=False)))
